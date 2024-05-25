@@ -37,7 +37,6 @@ namespace ChiayinYanping_InClass2
             //set timerAlarm and if timerclock is equals timerAlarm show picture
             timerAlarm.Interval = 1000;
             timerAlarm.Tick += btnAlarmOn_Click;
-            timerAlarm.Start();
         }
 
         private void TimerClock_Tick(object sender, EventArgs e)
@@ -53,11 +52,12 @@ namespace ChiayinYanping_InClass2
 
         private void btnAlarmOn_Click(object sender, EventArgs e)
         {
+            timerAlarm.Start();
             DateTime alarmTime = DateTime.Parse(dateTimePicker.Text);
             if ((DateTime.Now.ToString()).Equals(alarmTime.ToString()))
             {
                 picAlarm.Visible = true;
-            }
+            } 
         }
 
         private void btnAlarmOff_Click(object sender, EventArgs e)
