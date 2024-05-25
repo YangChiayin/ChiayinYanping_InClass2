@@ -120,9 +120,9 @@
             this.lblDayOfWeek.AutoSize = true;
             this.lblDayOfWeek.Location = new System.Drawing.Point(696, 653);
             this.lblDayOfWeek.Name = "lblDayOfWeek";
-            this.lblDayOfWeek.Size = new System.Drawing.Size(139, 25);
+            this.lblDayOfWeek.Size = new System.Drawing.Size(171, 25);
             this.lblDayOfWeek.TabIndex = 3;
-            this.lblDayOfWeek.Text = "Day Of Week";
+            this.lblDayOfWeek.Text = "Day of the Week";
             // 
             // dateTimePicker1
             // 
