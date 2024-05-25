@@ -50,7 +50,7 @@ namespace ChiayinYanping_InClass2
             timerAlarm.Interval = 1000;
             timerAlarm.Tick += (s, args) =>
             {
-                if (DateTime.Now <= alarmTime)
+                if (DateTime.Now == alarmTime)
                 {
                     picAlarm.Visible = true;
                 }
