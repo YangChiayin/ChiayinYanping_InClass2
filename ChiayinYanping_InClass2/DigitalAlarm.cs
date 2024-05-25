@@ -25,12 +25,19 @@ namespace ChiayinYanping_InClass2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //get system current clock time
             timerClock.Interval = 1000;
             timerClock.Tick += TimerClock_Tick;
             timerClock.Start();
 
+            //set date
             lblDate.Text = DateTime.Now.ToString("MM:dd:yyyy");
             lblDayOfWeek.Text = DateTime.Now.DayOfWeek.ToString();
+
+            //set timerAlarm and if timerclock is equals timerAlarm show picture
+            timerAlarm.Interval = 1000;
+            timerAlarm.Tick += btnAlarmOn_Click;
+            timerAlarm.Start();
         }
 
         private void TimerClock_Tick(object sender, EventArgs e)
@@ -47,15 +54,10 @@ namespace ChiayinYanping_InClass2
         private void btnAlarmOn_Click(object sender, EventArgs e)
         {
             DateTime alarmTime = DateTime.Parse(dateTimePicker.Text);
-            timerAlarm.Interval = 1000;
-            timerAlarm.Tick += (s, args) =>
+            if ((DateTime.Now.ToString()).Equals(alarmTime.ToString()))
             {
-                if (DateTime.Now == alarmTime)
-                {
-                    picAlarm.Visible = true;
-                }
-            };
-            timerAlarm.Start();
+                picAlarm.Visible = true;
+            }
         }
 
         private void btnAlarmOff_Click(object sender, EventArgs e)
