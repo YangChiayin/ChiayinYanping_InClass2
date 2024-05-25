@@ -2,7 +2,7 @@
  * Name of Project: ChiayinYanping_InClass2
  * Purpose: Understaing how to create alarm clock app using C#
  * Revision History: 
- * - Chiayin Yang, May 24th 2024, Create basic design and functions.
+ * - Chiayin Yang and Yanping Guo, May 24th 2024, Create basic design and functions.
  */
 using System;
 using System.Collections.Generic;
@@ -16,9 +16,9 @@ using System.Windows.Forms;
 
 namespace ChiayinYanping_InClass2
 {
-    public partial class Form1 : Form
+    public partial class DigitalAlarm : Form
     {
-        public Form1()
+        public DigitalAlarm()
         {
             InitializeComponent();
         }
@@ -42,6 +42,26 @@ namespace ChiayinYanping_InClass2
 
             lblDate.Text = now.ToString("MM:dd:yyyy");
             lblDayOfWeek.Text = now.DayOfWeek.ToString();
+        }
+
+        private void btnAlarmOn_Click(object sender, EventArgs e)
+        {
+            DateTime alarmTime = DateTime.Parse(dateTimePicker.Text);
+            timerAlarm.Interval = 1000;
+            timerAlarm.Tick += (s, args) =>
+            {
+                if (DateTime.Now <= alarmTime)
+                {
+                    picAlarm.Visible = true;
+                }
+            };
+            timerAlarm.Start();
+        }
+
+        private void btnAlarmOff_Click(object sender, EventArgs e)
+        {
+            timerAlarm.Stop();
+            picAlarm.Visible = false;
         }
     }
 }

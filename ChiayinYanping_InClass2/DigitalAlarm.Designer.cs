@@ -1,6 +1,6 @@
 ﻿namespace ChiayinYanping_InClass2
 {
-    partial class Form1
+    partial class DigitalAlarm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DigitalAlarm));
             this.lblTime = new System.Windows.Forms.Label();
             this.lblSeconds = new System.Windows.Forms.Label();
             this.lblAmPm = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.lblAlarmTime = new System.Windows.Forms.Label();
             this.lab1 = new System.Windows.Forms.Label();
             this.lab2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.timerAlarm = new System.Windows.Forms.Timer(this.components);
             this.lblDate = new System.Windows.Forms.Label();
@@ -51,8 +51,9 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(244, 90);
+            this.lblTime.Location = new System.Drawing.Point(307, 59);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(408, 147);
             this.lblTime.TabIndex = 0;
@@ -61,8 +62,9 @@
             // lblSeconds
             // 
             this.lblSeconds.AutoSize = true;
+            this.lblSeconds.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeconds.Location = new System.Drawing.Point(658, 90);
+            this.lblSeconds.Location = new System.Drawing.Point(721, 59);
             this.lblSeconds.Name = "lblSeconds";
             this.lblSeconds.Size = new System.Drawing.Size(171, 61);
             this.lblSeconds.TabIndex = 0;
@@ -71,8 +73,9 @@
             // lblAmPm
             // 
             this.lblAmPm.AutoSize = true;
+            this.lblAmPm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAmPm.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmPm.Location = new System.Drawing.Point(658, 176);
+            this.lblAmPm.Location = new System.Drawing.Point(721, 145);
             this.lblAmPm.Name = "lblAmPm";
             this.lblAmPm.Size = new System.Drawing.Size(171, 61);
             this.lblAmPm.TabIndex = 0;
@@ -88,6 +91,7 @@
             this.btnAlarmOn.TabIndex = 1;
             this.btnAlarmOn.Text = "Alarm On";
             this.btnAlarmOn.UseVisualStyleBackColor = false;
+            this.btnAlarmOn.Click += new System.EventHandler(this.btnAlarmOn_Click);
             // 
             // btnAlarmOff
             // 
@@ -99,6 +103,7 @@
             this.btnAlarmOff.TabIndex = 1;
             this.btnAlarmOff.Text = "Alarm Off";
             this.btnAlarmOff.UseVisualStyleBackColor = false;
+            this.btnAlarmOff.Click += new System.EventHandler(this.btnAlarmOff_Click);
             // 
             // picAlarm
             // 
@@ -109,6 +114,7 @@
             this.picAlarm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAlarm.TabIndex = 2;
             this.picAlarm.TabStop = false;
+            this.picAlarm.Visible = false;
             // 
             // lblAlarmTime
             // 
@@ -138,15 +144,15 @@
             this.lab2.TabIndex = 3;
             this.lab2.Text = "Day of the Week";
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(269, 313);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(295, 38);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker.Location = new System.Drawing.Point(269, 313);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(295, 38);
+            this.dateTimePicker.TabIndex = 4;
             // 
             // lblDate
             // 
@@ -180,13 +186,13 @@
             this.lblAlarmStatus.TabIndex = 3;
             this.lblAlarmStatus.Text = "Alarm Status";
             // 
-            // Form1
+            // DigitalAlarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1235, 848);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.lblDayOfWeek);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lab2);
@@ -199,8 +205,8 @@
             this.Controls.Add(this.lblAmPm);
             this.Controls.Add(this.lblSeconds);
             this.Controls.Add(this.lblTime);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DigitalAlarm";
+            this.Text = "DigitalAlarm";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAlarm)).EndInit();
             this.ResumeLayout(false);
@@ -219,7 +225,7 @@
         private System.Windows.Forms.Label lblAlarmTime;
         private System.Windows.Forms.Label lab1;
         private System.Windows.Forms.Label lab2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.Timer timerAlarm;
         private System.Windows.Forms.Label lblDate;
